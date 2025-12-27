@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Hub - AI Landing Page</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+        body{
+            font-family: Arial, sans-serif;
+            color:#333;
+            line-height:1.6;
+        }
+        /* Header with logo + nav */
+        nav{
+            position:fixed;
+            top:0;
+            left:0;
+            width:100%;
+            padding:1rem 6%;
+            background:rgba(0,0,0,0.9);
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            z-index:1000;
+        }
+        .logo{
+            display:flex;
+            align-items:center;
+            gap:0.6rem;
+            color:#fff;
+            font-weight:700;
+            letter-spacing:1px;
+            text-transform:uppercase;
+        }
+        .logo-mark{
+            width:34px;
+            height:34px;
+            border-radius:50%;
+            background:linear-gradient(135deg,#667eea,#ff6bcb);
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            font-size:0.9rem;
+        }
+        .logo-mark span{
+            color:#fff;
+        }
+        .logo-text span:first-child{
+            font-size:0.9rem;
+            text-transform:uppercase;
+        }
+        .logo-text span:last-child{
+            font-size:1.1rem;
+        }
+        nav ul{
+            list-style:none;
+            display:flex;
+            gap:2rem;
+        }
+        nav ul li a{
+            color:#fff;
+            text-decoration:none;
+            font-weight:500;
+            font-size:0.95rem;
+            text-transform:uppercase;
+            letter-spacing:0.08em;
+        }
+        nav ul li a:hover{
+            color:#667eea;
+        }
+        /* Hero section – clearer image */
+        .hero{
+            height:100vh;
+            background:
+              /* soft overlay only, more clarity */
+              linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.55)),
+              url('925515732f38860b7ad2b77da08183bf.jpg')
+              center center / cover no-repeat;
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+            text-align:center;
+            color:#fff;
+            padding:0 6%;
+        }
+        .hero h1{
+            font-size:3.2rem;
+            margin-bottom:1rem;
+            text-shadow:0 4px 12px rgba(0,0,0,0.65);
+        }
+        .hero p{
+            font-size:1.2rem;
+            max-width:650px;
+            margin-bottom:2rem;
+            text-shadow:0 2px 6px rgba(0,0,0,0.6);
+        }
+        .cta-button{
+            display:inline-block;
+            background:linear-gradient(45deg,#667eea,#ff6bcb);
+            color:#fff;
+            padding:14px 38px;
+            border-radius:40px;
+            text-decoration:none;
+            font-weight:600;
+            }
+        /* About section */
+        .about{
+            padding:100px 6%;
+            max-width:1200px;
+            margin:0 auto;
+            display:grid;
+            grid-template-columns:1.1fr 1.4fr;
+            gap:3rem;
+        }
+        .about-images{
+            display:flex;
+            flex-direction:column;
+            gap:1.5rem;
+        }
+        .about-images img{
+            width:100%;
+            height:240px;
+            object-fit:cover;
+            border-radius:16px;
+            box-shadow:0 10px 30px rgba(0,0,0,0.25);
+        }
+        .about-content h2{
+            font-size:2.3rem;
+            margin-bottom:1rem;
+            color:#2c3e50;
+        }
+        .about-content p{
+            margin-bottom:1rem;
+            color:#555;
+        }
+
+        /* Contact section */
+        .contact{
+            padding:100px 6%;
+            background:linear-gradient(135deg,#667eea,#764ba2);
+            color:#fff;
+        }
+        .contact h2{
+            text-align:center;
+            font-size:2.3rem;
+            margin-bottom:2.5rem;
+        }
+        .contact-grid{
+            max-width:1200px;
+            margin:0 auto;
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:3rem;
+        }
+        .contact-form{
+            background:rgba(255,255,255,0.1);
+            padding:2rem;
+            border-radius:18px;
+            backdrop-filter:blur(10px);
+        }
+        .form-group{
+            margin-bottom:1.4rem;
+        }
+        .form-group label{
+            display:block;
+            margin-bottom:0.4rem;
+            font-weight:500;
+        }
+        .form-group input,
+        .form-group textarea{
+            width:100%;
+            padding:10px 12px;
+            border:none;
+            border-radius:10px;
+            font-size:1rem;
+        }
+        .form-group textarea{
+            height:110px;
+            resize:vertical;
+        }
+        .submit-btn{
+            width:100%;
+            padding:12px;
+            border:none;
+            border-radius:10px;
+            font-size:1.05rem;
+            font-weight:600;
+            color:#667eea;
+            background:#fff;
+            cursor:pointer;
+        }
+        .contact-info{
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            gap:1.2rem;
+        }
+        .contact-item{
+            font-size:1.05rem;
+        }
+        footer{
+            background:#2c3e50;
+            color:#fff;
+            text-align:center;
+            padding:1.5rem;
+        }
+
+        /* Responsive */
+        @media (max-width:768px){
+            nav ul{
+                display:none;
+            }
+            .hero h1{
+                font-size:2.3rem;
+            }
+            .about{
+                grid-template-columns:1fr;
+            }
+            .contact-grid{
+                grid-template-columns:1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <nav>
+        <div class="logo">
+            <div class="logo-mark"><span>DH</span></div>
+            <div class="logo-text">
+                <span>Design</span><br>
+                <span>Hub</span>
+            </div>
+        </div>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <!-- Hero -->
+    <section id="home" class="hero">
+        <h1>Design Hub – AI Powered Creativity</h1>
+        <p>Crafting immersive digital experiences with intelligent design systems that merge artificial intelligence and human imagination.</p>
+        <a href="#contact" class="cta-button">Work With Us</a>
+    </section>
+    <!-- About -->
+    <section id="about" class="about">
+        <div class="about-images">
+            <img src="21110a29a73b932aa86ba61a5e796cc3.jpg" alt="Robot with dashboard">
+        </div>
+        <div class="about-content">
+            <h2>About Design Hub</h2>
+            <p>Design Hub blends modern UI aesthetics with powerful AI workflows to build landing pages, dashboards, and product interfaces that truly stand out.</p>
+            <p>From concept to deployment, the team focuses on pixel-perfect layouts, smooth interactions, and responsive code that adapts beautifully on every device.</p>
+        </div>
+    </section>
+    <!-- Contact -->
+    <section id="contact" class="contact">
+        <h2>Contact Design Hub</h2>
+        <div class="contact-grid">
+            <div class="contact-form">
+                <form>
+                    <div class="form-group">
+                        <label>Your Name</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Your Email</label>
+                        <input type="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Message</label>
+                        <textarea required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+            <div class="contact-info">
+                <div class="contact-item">📧 irenerachel@gmail.com</div>
+                <div class="contact-item">📱 +91 98765 43210</div>
+                <div class="contact-item">📍 Madurai, India</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2025 Design Hub. All rights reserved.
+    </footer>
+
+    <script>
+        // smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(a=>{
+            a.addEventListener('click',e=>{
+                e.preventDefault();
+                document.querySelector(a.getAttribute('href')).scrollIntoView({
+                    behavior:'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
